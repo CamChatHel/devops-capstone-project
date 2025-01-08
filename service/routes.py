@@ -67,12 +67,25 @@ def list_accounts():
     List all Accounts
     This endpoint will list all Accounts
     """
+    app.logger.info("Request to list all Accounts")
     accounts = Account.all()
-    if not accounts:
-        return json.dumps([], default=str), status.HTTP_200_OK
+
+    message_list = []
+    for account in accounts:
+        message_list.append(account.serialize())
+
     return make_response(
-        json.dumps(accounts, default=str), status.HTTP_200_OK
+        jsonify(message_list),
+        status.HTTP_200_OK
     )
+
+    ### ----- alter Code -----
+    #accounts = Account.all()
+    #if not accounts:
+     #   return json.dumps([], default=str), status.HTTP_200_OK
+   # return make_response(
+    #    json.dumps(accounts, default=str), status.HTTP_200_OK
+   # )
 
     ### ----- alter Code -----
     ### account_list = [account.serialize() for account in accounts]
