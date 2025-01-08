@@ -80,12 +80,12 @@ def list_accounts():
     )
 
     ### ----- alter Code -----
-    #accounts = Account.all()
-    #if not accounts:
-     #   return json.dumps([], default=str), status.HTTP_200_OK
-   # return make_response(
-    #    json.dumps(accounts, default=str), status.HTTP_200_OK
-   # )
+    ### accounts = Account.all()
+    ### if not accounts:
+    ###   return json.dumps([], default=str), status.HTTP_200_OK
+    ### return make_response(
+    ###    json.dumps(accounts, default=str), status.HTTP_200_OK
+    ### )
 
     ### ----- alter Code -----
     ### account_list = [account.serialize() for account in accounts]
