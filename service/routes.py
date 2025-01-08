@@ -67,7 +67,6 @@ def list_accounts():
     List all Accounts
     This endpoint will list all Accounts
     """
-    app.logger.info("Request to list Accounts")
     accounts = Account.all()
     if not accounts:
         return json.dumps([], default=str), status.HTTP_200_OK
